@@ -6,13 +6,7 @@ DUE: You must push your code to GitHub no later than **Thursday, April 23 at 5:2
 
 ### Overview
 
-Your job is to transform this app from a set of simple, static pages into a database-backed web application.
-
-Start by running a local server and getting a feel for what this app is trying to do.
-
-Then, change the code so that all of the data comes from your own database-backed model.
-
-Finally, you will enhance the app by adding another model and several new user interface elements.
+Your job is to transform this app into a database-backed web application.
 
 You can earn up to **2 points per challenge**, plus up to 2 points for code readability (good variable names, consistent indentation, etc.) for a total of **10 points**. Points are awarded for correctness and
 
