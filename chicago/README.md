@@ -31,14 +31,14 @@ By the end of this challenge, you should end up with 3 routes like this:
 
 ### Challenge #3: Add and Edit Places
 
-By the end of this challenge, you should have these 7 routes:
+By the end of this challenge, you should have these 7 routes, but **not necessarily in this order**:
 
 ``` ruby
   get '/places' => 'places#index'
   get '/places/:id' => 'places#show'
   get '/places/:id/delete' => 'places#delete'
-  get '/places/:id/new' => 'places#new'
-  get '/places/:id/create' => 'places#create'
+  get '/places/new' => 'places#new'
+  get '/places/create' => 'places#create'
   get '/places/:id/edit' => 'places#edit'
   get '/places/:id/update' => 'places#update'
 ```
