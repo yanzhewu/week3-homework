@@ -1,0 +1,31 @@
+<h2>Add A New Place</h2>
+<br>
+<form action="/places/<%= @id %>/update" method="get">
+<div class="row">
+	<div class="col-xs-2">
+		<strong>
+			Title:<br>
+			<br>
+			Photo URL:<br>
+			<br>
+			Price ($):<br>
+			<br>
+		</strong>
+	</div>
+	<div class="col-xs-10">
+		<input type="text" name="title" size="50" value = "<%= @place["title"]%>" ><br>
+		<br>
+		<input type="text" name="photo_url" size="100" value = "<%= @place["photo_url"]%>"><br>
+		
+		<br>
+		<input type="text" name="admission_price" value = "<%= @place["admission_price"]/100.0%>" >
+		
+		<br>
+	</div>
+</div>
+	<hr>
+<strong>Description</strong><br><br>
+	<textarea name="description" rows="4" cols="50" placeholder="Please input the description here"><%= @place["description"]%></textarea>
+	<br>
+	<button class="btn" type="submit">Submit</button>
+</form>

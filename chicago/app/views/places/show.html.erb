@@ -1,0 +1,45 @@
+<div class="container">
+	<h3 style="text-align: center; background-color: yellow; color: black;"><%= @place[:title] %></h3>
+	<h5>Price: $<%= @place[:admission_price]/100.0 %> <%= link_to "(edit)","/places/#{@place[:id]}/edit" %> </h5>
+	<%= image_tag @place[:photo_url], height: '300'%>
+	<br>
+	<hr>
+	<p>
+		<%= @place[:description]%>
+	</p>
+
+<h2> Reviews </h2>
+<form action="/places/<%=@id%>/review" method="get">
+	<select id="rate" name="Rate"><option>1 star</option>
+		<option selected="selected">2 star</option>
+		<option selected="selected">3 star</option>
+		<option selected="selected">4 star</option>
+		<option selected="selected">5 star</option>
+	</select>
+	<input id="description" name="description" type="text" placehold="Please enter your description here" size = 60/>
+	<input name="commit" type="submit" value="Submit" />
+</form>
+
+<ul>
+<% @reviews.each do |review| %>
+    <h5>
+    	<% if review[:rate]==5 %>
+    	    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+    	    <% elsif review[:rate] == 4 %>
+    	         <span>★</span><span>★</span><span>★</span><span>★</span>
+    	         <% elsif review[:rate] == 3 %>
+    	             <span>★</span><span>★</span><span>★</span>
+    	             <% elsif review[:rate] == 2 %>
+    	                 <span>★</span><span>★</span>
+    	                 <% elsif review[:rate] == 1 %>
+    	                     <span>★</span>
+    	    <% end %>
+      <%= review[:description] %>
+    </h5>
+  <% end %>
+</ul>
+
+
+
+
+</div>
