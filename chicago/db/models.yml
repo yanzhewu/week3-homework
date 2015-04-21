@@ -5,6 +5,7 @@ Place
   description: string
 
 Review
+  placeid: integer
   title: string
   rate: integer
   description: string

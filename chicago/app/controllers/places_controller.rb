@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
 	end
 
 	def show
-		@reviews = Review.all.reverse_order
+		@reviews = Review.where(:placeid => params["id"]).reverse_order
 		@id = params["id"]
 	    @place = Place.find_by(:id => params["id"])
       if @place != nil
@@ -55,12 +55,13 @@ class PlacesController < ApplicationController
 	end
 
 	def review
-		@reviews = Review.all.reverse_order
+		@reviews = Review.where(:placeid => params["id"]).reverse_order
 		@place = Place.find_by(:id => params["id"])
 		@rate_parts = params["Rate"]
 		@rate = @rate_parts[0].to_i
 		@description = params["description"]
 		review = Review.new
+		review[:placeid] = params["id"]
 		review[:rate] = @rate
 		review[:description] = @description
 		review.save

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "title"
     t.integer "rate"
     t.string  "description"
+    t.integer "placeid"
   end
 
 end
