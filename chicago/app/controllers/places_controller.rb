@@ -23,6 +23,12 @@ class PlacesController < ApplicationController
       else
         redirect_to "/", notice: "place not found."
       end
+     @reviews = Review.where(:placeid => params["id"]).reverse_order
+     if @reviews != nil
+     	@reviews.each do |review|
+     		review.delete
+     	end
+     end
 	end
 
 	def new
