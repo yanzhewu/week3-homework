@@ -67,6 +67,7 @@ class PlacesController < ApplicationController
 		@rate = @rate_parts[0].to_i
 		@description = params["description"]
 		review = Review.new
+		review[:title] = params["title"]
 		review[:placeid] = params["id"]
 		review[:rate] = @rate
 		review[:description] = @description

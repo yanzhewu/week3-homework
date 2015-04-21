@@ -16,7 +16,10 @@
 		<option selected="selected">4 star</option>
 		<option selected="selected">5 star</option>
 	</select>
-	<input id="description" name="description" type="text" placehold="Please enter your description here" size = 60/>
+	<input id="title" name="title" type="text" placehold="Please enter your title here" size = 60/>
+	<h5></h5>
+	<strong>Description</strong><br><br>
+	<textarea id="description" name="description" rows="4" cols="50" placeholder="Please input the description here"></textarea>
 	<input name="commit" type="submit" value="Submit" />
 </form>
 
@@ -35,7 +38,9 @@
     	                 <% elsif review[:rate] == 1 %>
     	                     <span>★</span>
     	    <% end %>
-      <%= review[:description] %>
+      <%= review[:title] %>
+      <h5> Description: <%= review[:description] %> </h5>
+      
     </h5>
   <% end %>
 </ul>
